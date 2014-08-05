@@ -23,6 +23,7 @@ You can ..
 ##API
 
 ### Ⅰ $.bm.define()
+When you register, the state of the object is 'off' in $.bm.map()
 ```html
 $.bm.define({
 		'group_name1': {
