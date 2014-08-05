@@ -1,4 +1,3 @@
-
 $(function(){
 
     // Define Base Function
@@ -7,6 +6,9 @@ $(function(){
     // Extend Protptype Base Plugin
     $.extend( bind_manager.prototype, {
 	map:{},
+        define :function( request ){
+	    return exe_common( this, 'define', request );
+        },
         on :function( request ){
 	    return exe_common( this, 'on', request );
         },
@@ -50,13 +52,17 @@ $(function(){
 
 		    var trigger	    = Object.keys( map_pieces[ group_name ][ element ])[ trigger_index ];
 		    var bind_func   = function(){};
-			    
+
+		    // Bind type group_name ( based _this.map[ request ] )
 		    if( typeof( map_pieces[ group_name ][ element ][ trigger ] ) == 'object' ){
 			bind_func	= map_pieces[ group_name ][ element ][ trigger ]['fn'];
+		    
+		    // Bind type single ( based {group_name:{element:{trigger:function}}} )
 		    }else if( typeof( map_pieces[ group_name ][ element ][ trigger ] ) == 'function' ){
 			bind_func	= map_pieces[ group_name ][ element ][ trigger ];
 		    }
 
+		    // Set Response Boolean
 		    response[ group_name ]  = false;
 
 		    // Validate Any Params
@@ -65,7 +71,7 @@ $(function(){
 			switch( method ){
 			case 'on':
 		    
-			    // if Already binded that exe off
+			    // if Already binded
 			    if( is_on( element, trigger ) === true ) off( _t, element, trigger );
 
 			    // jQuery On Function
@@ -78,8 +84,15 @@ $(function(){
 			case 'off':
 
 			    // jQuery Off Function
-			    off( _t, element, trigger );
+			    if( is_on( element, trigger ) === true ) off( _t, element, trigger );
 		        
+			    // Set Response
+			    response[ group_name ] = save_map( _t, method, group_name, element, trigger, bind_func );
+			    break;
+			case 'define':
+			   
+			    var method	= 'off';
+
 			    // Set Response
 			    response[ group_name ] = save_map( _t, method, group_name, element, trigger, bind_func );
 			    break;
@@ -110,7 +123,7 @@ $(function(){
 	    
 	    map_pieces	= request;
 	}else{
-	    throw request + " is not a group_name( String ) or Object";
+	    throw request + " is not a group_name( String ) or Object. this type is " + typeof( request );
 	} 
 
 	return map_pieces;
@@ -138,30 +151,15 @@ $(function(){
     function save_map( _t, method, group_name, element, trigger, bind_func ){
 
 	// Allocate Memory Space in Map
-	if( _t.map[ group_name ]				    == undefined ) _t.map[ group_name ]					= {};
-	if( _t.map[ group_name ][ element ]			    == undefined ) _t.map[ group_name ][ element ]		        = {};
-        if( _t.map[ group_name ][ element ][ trigger ]		    == undefined ) _t.map[ group_name ][ element ][ trigger ]		= {};
+	if( _t.map[ group_name ]		        == undefined ) _t.map[ group_name ]			    = {};
+	if( _t.map[ group_name ][ element ]	        == undefined ) _t.map[ group_name ][ element ]		    = {};
+        if( _t.map[ group_name ][ element ][ trigger ]	== undefined ) _t.map[ group_name ][ element ][ trigger ]   = {};
 
-	// Save 
+	// Save Map 
 	_t.map[ group_name ][ element ][ trigger ]['status']	= method;
 	_t.map[ group_name ][ element ][ trigger ]['fn']	= bind_func;
 
         return true; 
-    }
-
-    function remove_map( _t, method, group_name, element, trigger, bind_func ){
-
-	delete _t.map[ group_name ][ element ][ trigger ][ bind_func ];
-	
-	if( Object.keys( _t.map[ group_name ][ element ][ trigger ] ).length == 1 ){
-	
-	    delete _t.map[ group_name ][ element ][ trigger ];
-	
-	    if( Object.keys( _t.map[ group_name ][ element ] ).length == 0 ){
-		delete _t.map[ group_name ];
-	    }
-	}
-	return true;
     }
 
     function is_on( element, trigger ){
@@ -174,4 +172,3 @@ $(function(){
         bm: new bind_manager()
     });
 });
-
