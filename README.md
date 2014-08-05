@@ -16,7 +16,7 @@ HTML
 	<div class='elements'></div>
 </div>
 ```
-###$.bind_manager.define()
+###$.bm.define()
 ```html
   $.bm.define( {'group_name1': {
                           '#element1' :{ 'tap': function(){} }},
@@ -25,7 +25,7 @@ HTML
               } );
 ```
 
-###$.bind_manager.on()
+###$.bm.on()
 ```html
   $.bm.on( 'group_name1');
 ```
