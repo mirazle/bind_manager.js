@@ -21,11 +21,16 @@ You can ..
 
 ### Ⅰ $.bm.define()
 ```html
-  $.bm.define( {'group_name1': {
-                          '#element1' :{ 'tap': function(){} }},
-                          '.elements' :{ 'mouseover': function(){} }}
-                          }
-              } );
+$.bm.define({
+		'group_name1': {
+			'#element1' :{ 'tap': function(){} },
+			'.elements' :{ 'mouseover': function(){} }
+                },
+		'group_name2': {
+			'#element2' :{ 'tap': function(){} },
+			'.elements' :{ 'mouseover': function(){} }
+                }
+});
 ```
 
 ### Ⅱ $.bm.on()
