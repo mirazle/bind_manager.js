@@ -1,4 +1,4 @@
-# Simple configurable bind_manager.js
+# ○ Introduction
 
 jQuery bind func mapping plugin.
 You can .. 
@@ -7,8 +7,9 @@ You can ..
 - Prevent unnecessary multiple bind and memory saving
 - See bind structure in dev tool. 
 
-## Usage
-HTML
+# ○ Usage
+
+##HTML
 ```html
 <div id='element1'>
 	<div class='elements'></div>
@@ -16,6 +17,8 @@ HTML
 	<div class='elements'></div>
 </div>
 ```
+##jQuery
+
 ###$.bm.define()
 ```html
   $.bm.define( {'group_name1': {
