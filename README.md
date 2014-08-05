@@ -16,7 +16,19 @@ HTML
 	<div class='elements'></div>
 </div>
 ```
-###$.bm.on()
+###$.bind_manager.define()
+```html
+  $.bm.define( {'group_name1': {
+                          '#element1' :{ 'tap': function(){} }},
+                          '.elements' :{ 'mouseover': function(){} }}
+                          }
+              } );
+```
+
+###$.bind_manager.on()
+```html
+  $.bm.on( 'group_name1');
+```
 ```html
   $.bm.on( {'group_name1': {
                           '#element1' :{ 'tap': function(){} }},
@@ -25,6 +37,9 @@ HTML
               } );
 ```
 ###$.bm.off()
+```html
+  $.bm.off( 'group_name1');
+```
 ```html
   $.bm.off( {'group_name1': {
                           '#element1' : 'tap',
@@ -62,11 +77,4 @@ Object {group_name2: Object}
 			.
 			.
 ```
-###$.bm.on()
-```html
-  $.bm.on( 'group_name1');
-```
-###$.bm.off()
-```html
-  $.bm.off( 'group_name1');
-```
+
