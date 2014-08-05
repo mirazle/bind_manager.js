@@ -19,7 +19,7 @@ You can ..
 ```
 ##jQuery
 
-###$.bm.define()
+### 1 $.bm.define()
 ```html
   $.bm.define( {'group_name1': {
                           '#element1' :{ 'tap': function(){} }},
@@ -28,7 +28,7 @@ You can ..
               } );
 ```
 
-###$.bm.on()
+### 2 $.bm.on()
 ```html
   $.bm.on( 'group_name1');
 ```
@@ -39,7 +39,7 @@ You can ..
                           }
               } );
 ```
-###$.bm.off()
+### 3 $.bm.off()
 ```html
   $.bm.off( 'group_name1');
 ```
@@ -57,7 +57,7 @@ You can ..
                           }
               } );
 ```
-###$.bm.map()
+### 4 $.bm.map()
 You can see bind structure in dev tool.
 ```html
 Object {group_name1: Object}
