@@ -42,7 +42,7 @@ Group bind
 ```html
   $.bm.on( 'group_name1');
 ```
-Any functions bind and override
+Any function bind and override
 ```html
   $.bm.on( {'group_name1': {
                           '#element1' :{ 'tap': function(){} }},
@@ -55,7 +55,7 @@ Group unbind
 ```html
   $.bm.off( 'group_name1');
 ```
-Any functions unbind
+Any function unbind
 ```html
   $.bm.off( {'group_name1': {
                           '#element1' : 'tap',
@@ -63,7 +63,7 @@ Any functions unbind
                           }
               } );
 ```
-Any functions unbind and define
+Any function unbind and define
 ```html
   $.bm.off( {'group_name1': {
                           '#element1' :{ 'tap': function(){} }},
