@@ -17,7 +17,7 @@ You can ..
 	<div class='elements'></div>
 </div>
 ```
-##jQuery
+##API
 
 ### Ⅰ $.bm.define()
 ```html
