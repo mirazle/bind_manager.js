@@ -4,8 +4,8 @@ jQuery bind func mapping plugin.
 You can .. 
 - Collective management that some bind code.
 - Group on(), off().
-- Prevent unnecessary multiple bind and memory saving
-- See bind structure in dev tool. 
+- Prevent unnecessary double bind and memory saving
+- See bind tree structure in dev tool. 
 
 # ○ Usage
 
