@@ -37,9 +37,11 @@ $.bm.define({
 ```
 
 ### Ⅱ $.bm.on()
+Group bind
 ```html
   $.bm.on( 'group_name1');
 ```
+Any functions bind and override
 ```html
   $.bm.on( {'group_name1': {
                           '#element1' :{ 'tap': function(){} }},
@@ -48,9 +50,11 @@ $.bm.define({
               } );
 ```
 ### Ⅲ $.bm.off()
+Group unbind
 ```html
   $.bm.off( 'group_name1');
 ```
+Any functions unbind
 ```html
   $.bm.off( {'group_name1': {
                           '#element1' : 'tap',
@@ -58,6 +62,7 @@ $.bm.define({
                           }
               } );
 ```
+Any functions unbind and define
 ```html
   $.bm.off( {'group_name1': {
                           '#element1' :{ 'tap': function(){} }},
