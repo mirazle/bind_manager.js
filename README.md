@@ -1,7 +1,7 @@
 # Simple configurable bind_manager.js
 
 jQuery bind func mapping plugin.
-You can ..
+You can .. 
 - Collective management that some bind code.
 - Group on(), off().
 - Prevent unnecessary multiple bind and memory saving
