@@ -23,7 +23,9 @@ You can ..
 ##API
 
 ### Ⅰ $.bm.define()
-Defined status is 'off' in $.bm.map()
+Collective management that some bind code, and
+Defined status is 'off' in $.bm.map().
+
 ```html
 $.bm.define({
 		'group_name1': {
