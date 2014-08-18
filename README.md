@@ -26,7 +26,7 @@ You can ..
 Collective management that some bind code, and
 Defined status is 'off' in $.bm.map().
 
-```html
+```javascript
 $.bm.define({
 		'group_name1': {
 			'#element1' :{ 'tap': function(){} },
@@ -41,11 +41,11 @@ $.bm.define({
 
 ### Ⅱ $.bm.on()
 Group on ( bind )
-```html
+```javascript
   $.bm.on( 'group_name1');
 ```
 Any function bind and override
-```html
+```javascript
   $.bm.on( {'group_name1': {
                           '#element1' :{ 'tap': function(){} }},
                           '.elements' :{ 'mouseover': function(){} }}
@@ -54,7 +54,7 @@ Any function bind and override
 ```
 ### Ⅲ $.bm.off()
 Group off ( unbind )
-```html
+```javascript
   $.bm.off( 'group_name1');
 ```
 Any function off ( unbind )
@@ -66,7 +66,7 @@ Any function off ( unbind )
               } );
 ```
 Any function off ( unbind ) and define
-```html
+```javascript
   $.bm.off( {'group_name1': {
                           '#element1' :{ 'tap': function(){} }},
                           '.elements' :{ 'mouseover': function(){} }}
@@ -75,7 +75,7 @@ Any function off ( unbind ) and define
 ```
 ### Ⅳ $.bm.map()
 You can see bind structure in dev tool.
-```html
+```javascript
 Object {group_name1: Object}
 	'group_name1': Object
 		#element1: Object
