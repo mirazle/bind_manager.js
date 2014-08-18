@@ -96,7 +96,7 @@ Object {group_name2: Object}
 			.
 			.
 ```
-# ○ Other
-MIT License
- Copyright (C) 2014 mirazle
+# ○ License
+
+MIT License Copyright (C) 2014 mirazle
 
