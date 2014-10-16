@@ -17,15 +17,7 @@ $(function(){
         },
         is_on :function( request ){
 	    return exe_common( this, 'is_on', request );
-        },
-	// http://qiita.com/HamaTech/items/7819abacfaefc21405f3
-	hammer_triggers: ['tap', 'doubletap', 'pan', 'swipe', 'press', 'pinch', 'rotate'],
-	is_hammer_trigger: function( trigger ){
-	    for( i = 0; i <= this.hammer_triggers.length ; i++ ){
-	        if( this.hammer_triggers[ i ] ) return true;
-	    }
-	    return false;
-	}
+        }
     });
 
     // Common Execute Function
@@ -130,22 +122,12 @@ $(function(){
     }
 
     function on( _t, element, trigger, bind_func ){		
-	if( _t.is_hammer_trigger( trigger ) ){
-	    $( element ).hammer().on( trigger, bind_func );
-	}else{
-	    $( element ).on( trigger, bind_func );
-	} 
+        talkn.$( element ).on( trigger, bind_func );
     }
 
     function off( _t, element, trigger ){		
-			    
-	$( element ).unbind( trigger );
-	
-	if( _t.is_hammer_trigger( trigger ) ){
-	    $( element ).hammer().off( trigger );
-        }else{
-	    $( element ).off( trigger );
-	}
+	talkn.$( element ).unbind( trigger );
+	talkn.$( element ).off( trigger );
     }
 
     function save_map( _t, method, group_name, element, trigger, bind_func ){
