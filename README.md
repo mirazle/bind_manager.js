@@ -29,11 +29,11 @@ Defined status is 'off' in $.bm.map().
 ```javascript
 $.bm.define({
 		'group_name1': {
-			'#element1' :{ 'tap': function(){} },
+			'#element1' :{ 'touchstart mousedown': function(){} },
 			'.elements' :{ 'mouseover': function(){} }
                 },
 		'group_name2': {
-			'#element2' :{ 'tap': function(){} },
+			'#element2' :{ 'touchstart mousedown': function(){} },
 			'.elements' :{ 'mouseover': function(){} }
                 }
 });
@@ -47,7 +47,7 @@ Group on ( bind )
 Any function bind and override
 ```javascript
   $.bm.on( {'group_name1': {
-                          '#element1' :{ 'tap': function(){} }},
+                          '#element1' :{ 'touchstart mousedown': function(){} }},
                           '.elements' :{ 'mouseover': function(){} }}
                           }
               } );
@@ -68,7 +68,7 @@ Any function off ( unbind )
 Any function off ( unbind ) and define
 ```javascript
   $.bm.off( {'group_name1': {
-                          '#element1' :{ 'tap': function(){} }},
+                          '#element1' :{ 'touchstart mousedown': function(){} }},
                           '.elements' :{ 'mouseover': function(){} }}
                           }
               } );
